@@ -44,11 +44,12 @@ export default {
 
 <style lang="scss">
 @import './assets/scss/index';
+#app {
+  background-color: #fff;
+}
 .container {
   margin: 48px auto;
   width: 90%;
-  background-color: #fff;
-  box-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
   .nav {
     float: left;
     width: 210px;
