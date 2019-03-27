@@ -1,10 +1,11 @@
 <template>
   <header
     class="page-header"
-    :style="$route.name === 'index' ? 'box-shadow:none' : 'box-shadow:0 10px 60px 0 rgba(29,29,31,0.07)'"
-  >
+    :style="$route.name === 'index' ? 'box-shadow:none' : 'box-shadow:0 10px 60px 0 rgba(29,29,31,0.07)'">
     <div class="header-container">
-      <a href="https://github.com/BolinWang/vue-ui-doc" target="__blank">
+      <a
+        href="https://github.com/BolinWang/vue-ui-doc"
+        target="__blank">
         <i class="el-icon-document" />
         <span class="name">vue-ui-doc</span>
       </a>

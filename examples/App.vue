@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <mainHeader></mainHeader>
+    <mainHeader />
     <div class="container">
-      <sideNav class="nav"></sideNav>
-      <router-view class="view"></router-view>
+      <sideNav class="nav" />
+      <router-view class="view" />
     </div>
-    <mainFooter></mainFooter>
+    <mainFooter />
   </div>
 </template>
 
@@ -15,7 +15,12 @@ import mainFooter from './components/footer.vue'
 import sideNav from './components/side-nav.vue'
 import router from './router'
 export default {
-  name: 'app',
+  name: 'App',
+  components: {
+    mainHeader,
+    sideNav,
+    mainFooter
+  },
   data () {
     return {
       isMobileShow: false
@@ -33,11 +38,6 @@ export default {
         router.push({ name })
       }
     }
-  },
-  components: {
-    mainHeader,
-    sideNav,
-    mainFooter
   }
 }
 </script>

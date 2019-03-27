@@ -1,22 +1,36 @@
 <template>
   <div class="side-nav">
-    <div v-for="title in (Object.keys(data))" class="group-container" :key="title">
-      <p class="side-nav-title">{{title}}</p>
-      <div class="side-nav-items" v-for="nav in data[title]" :key="nav.name">
+    <div
+      v-for="title in (Object.keys(data))"
+      :key="title"
+      class="group-container">
+      <p class="side-nav-title">
+        {{ title }}
+      </p>
+      <div
+        v-for="nav in data[title]"
+        :key="nav.name"
+        class="side-nav-items">
         <template v-if="nav.desc">
           <router-link
-            :class="$route.name === nav.name ? 'active' : ''"
             v-if="nav.name"
-            :to="{name: nav.name}"
-          >{{nav.desc}}</router-link>
-          <p v-else class="side-nav-group">{{nav.desc}}</p>
-          <div v-for="item in nav.items" :key="item.name">
+            :class="$route.name === nav.name ? 'active' : ''"
+            :to="{name: nav.name}">
+            {{ nav.desc }}
+          </router-link>
+          <p
+            v-else
+            class="side-nav-group">
+            {{ nav.desc }}
+          </p>
+          <div
+            v-for="item in nav.items"
+            :key="item.name">
             <router-link
               :to="{name: item.name}"
               :class="$route.name === item.name ? 'active' : ''"
-              class="slid-nav-component"
-            >
-              <span class="en-name">{{item.desc}}</span>
+              class="slid-nav-component">
+              <span class="en-name">{{ item.desc }}</span>
             </router-link>
           </div>
         </template>

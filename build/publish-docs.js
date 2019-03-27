@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const execSync = require('child_process').execSync
 const VERSION = require('../package.json').version
 const GIT_COMMIT = execSync('git rev-parse --short HEAD').toString().replace(/\n/, '')
@@ -12,4 +11,4 @@ ghpages.publish('dist', {
   },
   repo: 'https://github.com/BolinWang/vue-ui-doc.git',
   message: `[deploy] ${GIT_COMMIT} - [release] ${VERSION}`
-});
+})
