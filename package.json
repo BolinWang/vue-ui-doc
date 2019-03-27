@@ -7,7 +7,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build_example": "node build/build.js examples"
+    "build_example": "node build/build.js examples",
+    "build:docs": "vue-cli-service build",
+    "publish:docs": "node build/publish-docs.js"
   },
   "dependencies": {
     "element-ui": "^2.6.3",
@@ -23,6 +25,7 @@
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "gh-pages": "^2.0.1",
     "highlight": "^0.2.4",
     "markdown-it-container": "^2.0.0",
     "markdown-it-decorate": "^1.2.2",
