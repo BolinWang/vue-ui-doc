@@ -14,7 +14,7 @@
     {
       "name": "alert",
       "path": "/alert",
-      "desc": "Alert"
+      "desc": "警告"
     }
   ]
 }
