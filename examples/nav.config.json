@@ -11,6 +11,10 @@
     }
   ],
   "组件": [
-
+    {
+      "name": "alert",
+      "path": "/alert",
+      "desc": "Alert"
+    }
   ]
 }
