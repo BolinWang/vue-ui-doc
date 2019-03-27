@@ -10,6 +10,7 @@
     "build_example": "node build/build.js examples"
   },
   "dependencies": {
+    "element-ui": "^2.6.3",
     "vue": "^2.6.6"
   },
   "devDependencies": {
@@ -26,6 +27,8 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-decorate": "^1.2.2",
     "markdown-it-task-checkbox": "^1.0.6",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.21"
