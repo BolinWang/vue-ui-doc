@@ -1,23 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import navConf from '@/nav.config.json'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+let routes = []
+
+Object.keys(navConf).forEach(header => {
+  routes = routes.concat(navConf[header])
+})
+console.log(routes)
+
+let addComponent = router => {
+  router.forEach(route => {
+    if (route.items) {
+      addComponent(route.items)
+      routes = routes.concat(route.items)
+    } else {
+      if (route.name === 'site-index') {
+        route.component = r =>
+          require.ensure([], () => r(require(`./docs/introduce.md`)))
+      } else {
+        route.component = r =>
+          require.ensure([], () => r(require(`./docs/${route.name}.md`)))
+      }
     }
-  ]
+  })
+}
+addComponent(routes)
+export default new Router({
+  routes: routes.filter(item => item.path)
 })
